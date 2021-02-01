@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/* 스킵 내비게이션  */
+#skip {position: relative;}
+#skip a {position: absolute; left: 0px; top: -35px; border: 1px solid #fff; color: #fff; background: #333; line-height: 30px; width: 140px; text-align: center;}
+#skip a:active,
+#skip a:focus {top: 0;}
+
+
+
+/* 레이아웃 */
+body{background : #c8e6c9;}
+#wrap {margin:0 auto;}
+#header { height:1030px;  }
+#contents {}
+#footer {border-top: 1px solid #eee;}
+
+/* 컨텐츠 레이아웃 
+#cont_nav {background-color: #f6fdff;display:none;}
+#cont_tit {background-color: #EAF7FD;}
+#cont_ban {background-color: #dceff7;}
+#cont_cont {background-color: #f6fdff;}*/
+
+
+/* 컨테이너 */
+.container {width:1200px;height:1030px; margin:0 auto; height: inherit; /*background:rgba(255,255,255,0.3);*/}
+
+/* 헤더 */
+.header {}
+.header .header-menu {text-align: right;}
+.header .header-menu a {color: #fff; padding: 10px 0px 10px 13px; display: inline-block;font-weight:bold;font-size: 20px;}
+.header .header-menu a:hover {color: #DC143C;}
+.header .header-tit {margin-left:200px;margin-top:100px;}
+.header .header-tit h1{color:#fff; font-size: 125px;  display:inline;}
+.header .header-tit .dot{color:#DC143C;}
+.header .header-tit a {display: inline-block; background-color: #2698cb; font-size: 18px; color: #fff; padding: 5px 20px 6px 20px; margin-top: -5px;}
+/*padding : (위)(오른쪽)(아래)(왼쪽). 패딩은 배경색과 글자 사이 여백을 조정한다!*/
+
+
+
+#aboutme {height:1030px;}
+#aboutme h1{font-size: 35px;padding:30px;}
+#aboutme p{font-size: 25px;margin:20px;}
+#aboutme img{float:left; margin:40px;}
+#aboutme .left{display:inline;}
+#aboutme .right{float:right;}
+
+#EXPERIENCES {height:1545px;}
+#EXPERIENCES h1{font-size: 35px;padding:30px;}
+#EXPERIENCES h3{display:inline;color:#DC143C;font-size: 20px;font-weight: 500;}
+#EXPERIENCES h3::after {content: '      '}
+#EXPERIENCES .samsung{height:800px;}
+#EXPERIENCES .samsung h3::after {content: '      '}
+#EXPERIENCES .mixxo{height:450px;}
+#EXPERIENCES .name{font-size: 20px;margin:20px;}
+#EXPERIENCES .body{font-size: 20px;margin:18px;}
+
+#ACTIVITIES {height:1030px;}
+#ACTIVITIES h1{font-size: 35px;}
+#ACTIVITIES .name{font-size: 20px;color:#DC143C;}
+#ACTIVITIES .body{font-size: 20px;}
+#ACTIVITIES video{ display: block; margin: auto; }
+
+#CONTACT {height:1030px;}
+#CONTACT h1{font-size: 35px;padding:30px;}
+#CONTACT .body{font-size: 35px;margin-left:100px;}
+#CONTACT input{margin:70px 500px;font-size: 35px;width:200px;height:100px;border-radius: 10%;}
+#CONTACT input:hover{font-weight: 500; color:#DC143C;}
+/* float: left로 인한 영역깨짐(height:0) 방지법 
+1. 깨지는 영역에 똑같이 float:left를 사용한다.(X) --> 모든 박스에 float:left를 사용하게 됩니다.
+2. float의 성질을 차단하는 clear: both;를 사용한다.(X) --> 어떤 영역이 깨졌는지 찾기 어려움.
+3. float을 사용한 상위 박스한테 overflow: hidden을 사용합니다. (O) --> 현재는 제일 많이 사용.
+4. clearfix를 사용합니다. (O)
+*/
+
+/* 전체 메뉴 
+.nav {overflow: hidden; padding: 30px 0;}
+.nav > div {float: left; width: 40%;}/*.nav > div 하면 첫번째 자식만 인정?적용한다는 뜻. 
+.nav > div:last-child {width: 20%;} /* ie9부터 사용 가능 
+.nav > div.last {width: 20%;} 
+.nav > div h3 {font-size: 18px; color: #25a2d0; margin-bottom: 10px;}
+.nav > div ol {overflow: hidden;}/*float:left 쓸 때 상위 부모한테 overflow: hidden 쓰기
+.nav > div ol li {float: left; width: 50%;}
+.nav > div.last ol li {width: 100%;}
+.nav > div ol li a:hover {text-decoration: underline;}*/
+
+/* 타이틀 */
+.tit {position: relative;} /*타이틀에 relative position을 줌으로써 타이틀을 기준으로 오른쪽에 btn을 배치한다!!!!!!(그렇지 않으면 홈페이지 최상단 우측에 배치됨)*/
+.tit h2 {font-size: 40px; text-align: center; padding: 10px 0; letter-spacing: 20px; color: #2c94c4; font-family: 'Nanum Brush Script', cursive;}
+.tit .btn {position: absolute; top: 5px; right: 0; width: 60px; height: 60px; background: url(../img/icon.png) no-repeat 0 -600px;}
+.tit .btn.on {background-position: 0 -660px;}
+
+/* 배너 
+.ban {position: relative; padding: 24px 0 20px;}
+.ban a.prev {position: absolute; left: -80px; top: 60px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px 0;} 
+.ban a.next {position: absolute; right: -80px; top: 60px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px -43px;}
+.ban a.prev:hover {background-position: -193px 0;}
+.ban a.next:hover {background-position: -193px -43px;}
+.ban ul {overflow: hidden;}
+.ban ul li {float: left; width: 330px;}/*float:left로 인해서 가로 정렬이 된다.(부모에 overflow: hidden; 적용)
+.ban ul li:last-child {text-align: right;} /* ie9부터 적용 
+.ban ul li:nth-child(2) {text-align: center;} /* ie9부터 적용 
+.ban ul li img {border: 4px solid #dcdcdc;}
+.ban ul li img:hover {border-color: #98bcdc;}
+*/
+
+/* 슬릭 배너 */
+.ban {position: relative; padding: 24px 0 400px;}
+.ban .slick-prev {position: absolute; left: 40px; top: 250px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px 0; text-indent: -9999px;}
+.ban .slick-next {position: absolute; right: 40px; top: 250px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px -43px; text-indent: -9999px;}
+.ban .slick-prev:hover {background-position: -193px 0;}
+.ban .slick-next:hover {background-position: -193px -43px;}
+/*이미지(이미지 태그) 테두리 설정, 테두리 hover 설정 */
+.ban img {border: 4px solid #dcdcdc;}
+.ban img:hover {border-color: #98bcdc;}
+
+.ban .slick-slide {margin: 20px 50px 50px 200px;}/* slick-slide는 슬라이드 배너 클래스 이름이고, margin 값은 슬라이드 배너 밖 공간*/
+.ban .slick-dots {position: absolute; bottom: 15px; display: block; width: 100%; text-align: center;}
+.ban .slick-dots li {display:inline-block; width: 15px; height: 15px; margin: 5px;}
+.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width:15px; height:15px; cursor:pointer; background:#5dbfeb; border-radius: 50%;}
+.ban .slick-dots li.slick-active button {background: #2b91c8;}
+
+/* 푸터 */
+.footer {padding: 25px 0; text-align: center;}
+.footer ul {margin-bottom: 20px;}
+.footer li {position: relative; display: inline; padding: 0 7px 0 10px;}/*float:left해도 되지만 그렇게 하면 text-align:center 안 먹히기 떄문에 dp:inline으로 해준다!*/
+.footer li:before {content: ''; width: 1px; height: 12px; background: #ccc; position: absolute; left: 0; top: 2px;}/*가상의 요소를 만들어서 바 표시를 해줄 수 있다*/
+.footer li:first-child:before {width: 0; height: 0;}
+.footer .w3c {margin-top: 15px;}
